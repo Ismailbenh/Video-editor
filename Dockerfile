@@ -19,6 +19,7 @@ RUN npm ci && npm run build
 
 RUN touch database/database.sqlite
 RUN chmod -R 775 storage bootstrap/cache database
+RUN php artisan migrate --force
 
 EXPOSE 10000
 
